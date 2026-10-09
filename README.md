@@ -4,7 +4,7 @@ Guia público para hóspedes de suítes de temporada em Ubatuba. O projeto reún
 
 **Autora e responsável pelo projeto:** Evelyn dos Santos Rofino.
 
-[Ver a versão publicada](https://amarelo-sol-ubatuba-guia.rainy-stone-4215.chatgpt.site)
+[Acesse a versão publicada](https://amarelo-sol-ubatuba-guia.rainy-stone-4215.chatgpt.site)
 
 ## Problema e proposta
 
@@ -65,9 +65,18 @@ A sintaxe do JavaScript da versão inicial foi verificada e a publicação foi c
 
 O QR code incluído aponta para a versão publicada no link acima. Se você publicar em GitHub Pages, gere outro QR code para o novo endereço, ou mantenha o atual para continuar usando a primeira publicação. O QR code não muda automaticamente quando você troca de hospedagem.
 
-## Processo de desenvolvimento e IA
+## Desenvolvimento e Tecnologias
 
-Projeto desenvolvido com apoio de IA na geração do código e da primeira interface. Evelyn definiu o problema, os requisitos, a identidade do negócio e os dados da hospedagem. A seleção pessoal de locais, os testes em dispositivos e as próximas melhorias devem ser documentados conforme forem realizados. Este README não atribui à autora implementação manual que não ocorreu.
+Projeto desenvolvido com apoio de IA na geração do código e da primeira interface no estilo **vibe coding**.
+
+A autora definiu o problema, os requisitos, a identidade do negócio e os dados da hospedagem. 
+
+A arquitetura lógica, os scripts e o design inicial foram criados por meio de engenharia de prompt utilizando o **ChatGPT Plus**. Essa abordagem guiada por intenção permitiu transformar conceitos abstratos em um site funcional de forma extremamente ágil, focando na orquestração dos recursos da inteligência artificial.
+
+###  Ferramentas Utilizadas
+* **[ChatGPT Plus](https://chatgpt.com)** — Geração do código-fonte (HTML/CSS/JS ou Framework) e estrutura da interface.
+* **Refinamento Manual** — Ajustes e polimento final do código para garantir a usabilidade.
+
 
 ## Próximas melhorias
 
