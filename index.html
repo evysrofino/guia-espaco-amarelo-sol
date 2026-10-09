@@ -1,1 +1,273 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Seu guia de praias, passeios e sabores de Ubatuba. Espaço Amarelo Sol."><title>Guia de Ubatuba • Espaço Amarelo Sol</title><link rel="stylesheet" href="style.css"></head><body><a href="#conteudo" class="skip">Pular para o conteúdo</a><header><a class="brand" href="#">☀ Espaço Amarelo Sol<span>Ubatuba • guia do hóspede</span></a><nav aria-label="Menu"><a href="#explorar">Explorar</a><a href="#estadia">Sua estadia</a><a href="#contato">Contato</a></nav></header><section class="hero"><div class="hero-content"><div class="eyebrow">Bem-vindo ao litoral</div><h1>Seus dias de sol,<br><em>do seu jeito.</em></h1><p>Praias, passeios e sabores para aproveitar Ubatuba. Escolha seu próximo destino e abra a rota no celular.</p><a class="button" href="#explorar">Vamos explorar ↗</a></div><svg viewBox="0 0 1400 220" preserveAspectRatio="none" aria-hidden="true"><path d="M0 110 Q170 -20 320 105 T600 90 L600 220H0Z" fill="#659b8a"/><path d="M900 170 Q1150 10 1400 100V220H900Z" fill="#7aa895"/><path d="M0 150Q350 210 700 150T1400 155V220H0Z" fill="#6db8b1"/><path d="M0 185Q350 130 700 185T1400 180V220H0Z" fill="#b2dcd2"/><path d="M0 210Q400 180 750 210T1400 210V220H0Z" fill="#f3ddb0"/></svg></section><main id="conteudo"><section class="welcome"><p><strong>Que bom ter você por aqui.</strong><br>Este guia acompanha sua estadia no Espaço Amarelo Sol. Explore as sugestões abaixo e conte com as anfitriãs quando precisar.</p><a class="button light" href="https://wa.me/5512981269638" target="_blank" rel="noopener">Conversar com Evelyn ↗</a></section><section id="explorar"><div class="title-row"><div><div class="eyebrow">Um roteiro cheio de possibilidades</div><h2>O que vamos fazer hoje?</h2></div><span class="small" id="count" aria-live="polite"></span></div><div class="tools" role="group" aria-label="Filtrar lugares"><button class="filter" data-category="Todos" aria-pressed="true">Todos</button><button class="filter" data-category="Praias" aria-pressed="false">☀ Praias</button><button class="filter" data-category="Passeios" aria-pressed="false">⌁ Passeios</button><button class="filter" data-category="Onde comer" aria-pressed="false">♧ Onde comer</button><input id="search" type="search" aria-label="Buscar lugar" placeholder="Buscar um lugar…"></div><div id="places" class="grid"></div><p class="empty" id="empty" hidden>Nenhum lugar encontrado. Tente outro nome ou categoria.</p><div class="note">Antes de sair, consulte horários, ingressos e cardápios nos canais dos locais. Para entrar no mar, confira a sinalização e as condições de balneabilidade. <a href="https://cetesb.sp.gov.br/praias/" target="_blank" rel="noopener">Consultar praias na CETESB ↗</a></div></section><section class="stay" id="estadia"><div><div class="eyebrow">Seu ponto de partida</div><h2>Volte para o Amarelo Sol.</h2><p class="address">Rua Portuguesa Santista, 481<br>Estufa II • Ubatuba/SP<br>CEP 11689-364</p><div class="links" id="home-links"></div><button class="copy" id="copy">Copiar endereço para delivery</button><div class="status" id="copy-status" aria-live="polite"></div></div><div><h3>Sua estadia, sem dúvidas</h3><p><strong>Check-in</strong> a partir das 14h00<br><strong>Check-out</strong> até as 12h00</p><ul><li>Ao sair, apague as luzes e desligue ventilador e ar-condicionado.</li><li>Mantenha a porta trancada ao sair.</li><li>Silêncio absoluto após as 22h00.</li><li>No check-out, chame a anfitriã para a conferência da suíte e a devolução das chaves.</li></ul></div></section><section class="contact" id="contato"><div><div class="eyebrow">Estamos por perto</div><h2>Precisa de uma dica?</h2><p class="small">Fale conosco para orientações e sugestões de delivery.</p></div><div class="links"><a href="https://wa.me/5512981269638" target="_blank" rel="noopener">WhatsApp • Evelyn ↗</a><a href="tel:+5512997505602">Ligar • Dina ☎</a></div></section></main><footer>☀ Espaço Amarelo Sol Ubatuba<br>Obrigada por se hospedar conosco.<br><a href="assets/qr-guia.png" download="QR-Guia-Amarelo-Sol.png">Baixar QR code deste guia</a></footer><script src="script.js" defer></script></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="Seu guia de praias, passeios e sabores de Ubatuba. Espaço Amarelo Sol.">
+
+  <title>Guia de Ubatuba • Espaço Amarelo Sol</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <a href="#conteudo" class="skip">Pular para o conteúdo</a>
+
+  <header>
+    <a class="brand" href="#">
+      ☀ Espaço Amarelo Sol
+      <span>Ubatuba • guia do hóspede</span>
+    </a>
+
+    <nav aria-label="Menu principal">
+      <a href="#explorar">Explorar</a>
+      <a href="#estadia">Sua estadia</a>
+      <a href="#contato">Contato</a>
+
+      <a class="access-link" href="#acessibilidade">
+        <svg viewBox="0 0 48 48" width="26" height="26"
+             aria-hidden="true" focusable="false">
+          <circle cx="24" cy="24" r="22" fill="currentColor"/>
+          <circle cx="24" cy="12" r="4" fill="white"/>
+          <path d="M12 19L24 22L36 19M24 22V30M24 30L18 39M24 30L30 39"
+                fill="none" stroke="white" stroke-width="4"
+                stroke-linecap="round"/>
+        </svg>
+        <span>Acessibilidade</span>
+      </a>
+    </nav>
+  </header>
+
+  <section class="hero" aria-labelledby="titulo-principal">
+    <div class="hero-content">
+      <div class="eyebrow">Bem-vindo ao litoral</div>
+
+      <h1 id="titulo-principal">
+        Seus dias de sol,<br>
+        <em>do seu jeito.</em>
+      </h1>
+
+      <p>
+        Praias, passeios e sabores para aproveitar Ubatuba.
+        Escolha seu próximo destino e abra a rota no celular.
+      </p>
+
+      <a class="button" href="#explorar">
+        Vamos explorar <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+    <svg viewBox="0 0 1400 220" preserveAspectRatio="none"
+         aria-hidden="true" focusable="false">
+      <path d="M0 110 Q170 -20 320 105 T600 90 L600 220H0Z"
+            fill="#659b8a"/>
+      <path d="M900 170 Q1150 10 1400 100V220H900Z"
+            fill="#7aa895"/>
+      <path d="M0 150Q350 210 700 150T1400 155V220H0Z"
+            fill="#6db8b1"/>
+      <path d="M0 185Q350 130 700 185T1400 180V220H0Z"
+            fill="#b2dcd2"/>
+      <path d="M0 210Q400 180 750 210T1400 210V220H0Z"
+            fill="#f3ddb0"/>
+    </svg>
+  </section>
+
+  <main id="conteudo" tabindex="-1">
+    <section class="welcome">
+      <p>
+        <strong>Que bom ter você por aqui.</strong><br>
+        Este guia acompanha sua estadia no Espaço Amarelo Sol.
+        Explore as sugestões abaixo e conte com as anfitriãs
+        quando precisar.
+      </p>
+
+      <a class="button light"
+         href="https://wa.me/5512981269638"
+         target="_blank" rel="noopener">
+        Conversar com Evelyn <span aria-hidden="true">↗</span>
+        <span class="sr-only"> (abre em nova aba)</span>
+      </a>
+    </section>
+
+    <section id="explorar" tabindex="-1"
+             aria-labelledby="titulo-explorar">
+      <div class="title-row">
+        <div>
+          <div class="eyebrow">Um roteiro cheio de possibilidades</div>
+          <h2 id="titulo-explorar">O que vamos fazer hoje?</h2>
+        </div>
+
+        <span class="small" id="count" role="status"
+              aria-live="polite" aria-atomic="true"></span>
+      </div>
+
+      <div class="tools" role="group" aria-label="Filtrar lugares">
+        <button class="filter" type="button"
+                data-category="Todos" aria-pressed="true">
+          Todos
+        </button>
+
+        <button class="filter" type="button"
+                data-category="Praias" aria-pressed="false">
+          <span aria-hidden="true">☀</span> Praias
+        </button>
+
+        <button class="filter" type="button"
+                data-category="Passeios" aria-pressed="false">
+          <span aria-hidden="true">⌁</span> Passeios
+        </button>
+
+        <button class="filter" type="button"
+                data-category="Onde comer" aria-pressed="false">
+          <span aria-hidden="true">♧</span> Onde comer
+        </button>
+
+        <div class="search-field">
+          <label for="search">Buscar um lugar</label>
+          <input id="search" type="search"
+                 placeholder="Ex.: Tenório ou restaurante"
+                 aria-controls="places" autocomplete="off">
+        </div>
+      </div>
+
+      <div id="places" class="grid"></div>
+
+      <p class="empty" id="empty" hidden>
+        Nenhum lugar encontrado. Tente outro nome ou categoria.
+      </p>
+
+      <noscript>
+        <p>
+          Ative o JavaScript para consultar os cartões e filtros.
+          Você também pode falar com as anfitriãs pelos contatos abaixo.
+        </p>
+      </noscript>
+
+      <div class="note">
+        Antes de sair, consulte horários, ingressos e cardápios
+        nos canais dos locais. Para entrar no mar, confira a
+        sinalização e as condições de balneabilidade.
+
+        <a href="https://cetesb.sp.gov.br/praias/"
+           target="_blank" rel="noopener">
+          Consultar praias na CETESB
+          <span aria-hidden="true">↗</span>
+          <span class="sr-only"> (abre em nova aba)</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="stay" id="estadia" tabindex="-1"
+             aria-labelledby="titulo-estadia">
+      <div>
+        <div class="eyebrow">Seu ponto de partida</div>
+        <h2 id="titulo-estadia">Volte para o Amarelo Sol.</h2>
+
+        <p class="address">
+          Rua Portuguesa Santista, 481<br>
+          Estufa II • Ubatuba/SP<br>
+          CEP 11689-364
+        </p>
+
+        <div class="links" id="home-links"></div>
+
+        <button class="copy" id="copy" type="button">
+          Copiar endereço para delivery
+        </button>
+
+        <div class="status" id="copy-status" role="status"
+             aria-live="polite" aria-atomic="true"></div>
+      </div>
+
+      <div>
+        <h3>Sua estadia, sem dúvidas</h3>
+
+        <p>
+          <strong>Check-in</strong> a partir das 14h00<br>
+          <strong>Check-out</strong> até as 12h00
+        </p>
+
+        <ul>
+          <li>
+            Ao sair, apague as luzes e desligue ventilador
+            e ar-condicionado.
+          </li>
+          <li>Mantenha a porta trancada ao sair.</li>
+          <li>Silêncio absoluto após as 22h00.</li>
+          <li>
+            No check-out, chame a anfitriã para a conferência
+            da suíte e a devolução das chaves.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact" id="contato" tabindex="-1"
+             aria-labelledby="titulo-contato">
+      <div>
+        <div class="eyebrow">Estamos por perto</div>
+        <h2 id="titulo-contato">Precisa de uma dica?</h2>
+
+        <p class="small">
+          Fale conosco para orientações e sugestões de delivery.
+        </p>
+      </div>
+
+      <div class="links">
+        <a href="https://wa.me/5512981269638"
+           target="_blank" rel="noopener">
+          WhatsApp • Evelyn <span aria-hidden="true">↗</span>
+          <span class="sr-only"> (abre em nova aba)</span>
+        </a>
+
+        <a href="tel:+5512997505602">
+          Ligar • Dina <span aria-hidden="true">☎</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="access-section" id="acessibilidade"
+             tabindex="-1" aria-labelledby="access-title">
+      <h2 id="access-title">Acessibilidade</h2>
+
+      <p>
+        Você pode navegar com Tab e Shift + Tab, ativar links
+        com Enter e usar Enter ou espaço nos botões.
+        O primeiro link da página permite pular para o conteúdo.
+      </p>
+
+      <p>
+        Amplie a página pelo navegador: no computador,
+        use Ctrl + + ou Command + +. No celular, use o gesto
+        de ampliar ou as opções de zoom do navegador.
+        O guia respeita a preferência de reduzir movimento
+        configurada no dispositivo.
+      </p>
+
+      <p>
+        Encontrou uma dificuldade para acessar alguma informação?
+        <a href="https://wa.me/5512981269638?text=Ol%C3%A1%2C%20encontrei%20uma%20dificuldade%20de%20acessibilidade%20no%20guia."
+           target="_blank" rel="noopener">
+          Avisar Evelyn pelo WhatsApp
+          <span class="sr-only"> (abre em nova aba)</span>
+        </a>
+        ou
+        <a href="tel:+5512997505602">
+          ligar para Dina: (12) 99750-5602
+        </a>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    ☀ Espaço Amarelo Sol Ubatuba<br>
+    Obrigada por se hospedar conosco.<br>
+
+    <a href="assets/qr-guia.png" download="QR-Guia-Amarelo-Sol.png">
+      Baixar QR code deste guia
+    </a>
+  </footer>
+</body>
+</html>
