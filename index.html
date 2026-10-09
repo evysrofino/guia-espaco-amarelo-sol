@@ -232,6 +232,32 @@
              tabindex="-1" aria-labelledby="access-title">
       <h2 id="access-title">Acessibilidade</h2>
 
+      <div class="access-controls" role="group"
+     aria-label="Ajustes de acessibilidade">
+
+  <button id="text-decrease" type="button">
+    A− Diminuir texto
+  </button>
+
+  <button id="text-increase" type="button">
+    A+ Aumentar texto
+  </button>
+
+  <button id="contrast-toggle" type="button"
+          aria-pressed="false">
+    Alto contraste
+  </button>
+
+  <button id="access-reset" type="button">
+    Restaurar padrão
+  </button>
+</div>
+
+<p id="access-status" role="status"
+   aria-live="polite" aria-atomic="true">
+  Texto: 100%. Alto contraste desativado.
+</p>
+
       <p>
         Você pode navegar com Tab e Shift + Tab, ativar links
         com Enter e usar Enter ou espaço nos botões.
