@@ -1,5 +1,30 @@
 const places = [
   {
+    name: "Ubatuba Mall — Roda Gigante",
+    category: "Passeios",
+    icon: "🎡",
+    desc: "Conheça o Ubatuba Mall e aproveite a roda-gigante para apreciar a paisagem da cidade. Consulte ingressos e horários no site.",
+    query: "Ubatuba Mall Rua Guarani 374 Ubatuba SP",
+    source: "https://www.rodadeubatuba.com.br/"
+  },
+  {
+    name: "Feira Hippie",
+    category: "Passeios",
+    icon: "🛍️",
+    desc: "Passeie pela feirinha de artesanato na orla do Centro e encontre lembrancinhas para levar um pedacinho de Ubatuba com você.",
+    query: "Feirinha de Artesanato Ubatuba Praia do Cruzeiro",
+    source: "https://www.curiosidadesdeubatuba.com.br/feirinha/"
+  },
+  {
+    name: "Mercado Municipal de Peixe",
+    category: "Passeios",
+    icon: "🐟",
+    desc: "Visite o mercado na Ilha dos Pescadores e conheça um pouco da tradição pesqueira de Ubatuba.",
+    query: "Mercado Municipal de Peixe Ilha dos Pescadores Ubatuba SP",
+    source: "https://turismo.ubatuba.sp.gov.br/atrativosturisticos/barra/"
+  },
+  
+  {
     name: "Praia do Tenório",
     category: "Praias",
     icon: "🏖️",
