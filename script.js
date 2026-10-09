@@ -358,3 +358,65 @@ render();
 
   applyPreferences(false);
 })();
+/* Abre os controles em um painel acessível. */
+(() => {
+  const openButton = document.getElementById("open-access");
+  const controls = document.querySelector(
+    "#acessibilidade .access-controls"
+  );
+  const status = document.getElementById("access-status");
+
+  if (!openButton || !controls || !status) return;
+  if (document.getElementById("access-dialog")) return;
+
+  const dialog = document.createElement("dialog");
+  dialog.id = "access-dialog";
+  dialog.className = "access-dialog";
+  dialog.setAttribute("aria-labelledby", "dialog-access-title");
+  dialog.setAttribute("aria-describedby", "dialog-access-description");
+
+  const title = document.createElement("h2");
+  title.id = "dialog-access-title";
+  title.textContent = "Acessibilidade";
+
+  const description = document.createElement("p");
+  description.id = "dialog-access-description";
+  description.textContent =
+    "Ajuste o tamanho do texto e o contraste. " +
+    "Estas escolhas valem apenas neste navegador.";
+
+  const closeButton = document.createElement("button");
+  closeButton.type = "button";
+  closeButton.className = "dialog-close";
+  closeButton.textContent = "Fechar";
+
+  /* Move os controles existentes, preservando suas funções. */
+  dialog.append(
+    title,
+    description,
+    controls,
+    status,
+    closeButton
+  );
+
+  document.body.appendChild(dialog);
+
+  openButton.addEventListener("click", () => {
+    if (dialog.open) return;
+
+    dialog.showModal();
+
+    const firstButton = controls.querySelector("button");
+    firstButton?.focus();
+  });
+
+  closeButton.addEventListener("click", () => {
+    dialog.close();
+  });
+
+  /* O dialog nativo fecha com Esc e mantém o foco dentro
+     do painel enquanto está aberto. */
+  dialog.addEventListener("close", () => {
+    openButton.focus();
+  });
+})();
