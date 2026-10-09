@@ -732,3 +732,252 @@ footer {
     forced-color-adjust: none;
   }
 }
+/* Tamanho de texto escolhido pelo visitante */
+:root {
+  --text-scale: 1;
+}
+
+html {
+  font-size: calc(100% * var(--text-scale));
+}
+
+body { font-size: 1rem; }
+.brand { font-size: 1.0625rem; }
+.brand span { font-size: 0.6875rem; }
+
+nav,
+.button,
+.search-field label,
+.copy,
+.contact .links a {
+  font-size: 0.875rem;
+}
+
+.eyebrow,
+.links a,
+footer {
+  font-size: 0.75rem;
+}
+
+.small,
+.source,
+.status,
+.note {
+  font-size: 0.8125rem;
+}
+
+input { font-size: 1rem; }
+
+h1 {
+  font-size: clamp(
+    2.75rem,
+    calc(6vw * var(--text-scale)),
+    4.75rem
+  );
+}
+
+h2 { font-size: 2.375rem; }
+h3 { font-size: 1.17rem; }
+.card h3 { font-size: 1.5625rem; }
+
+.card p,
+.stay ul {
+  font-size: 0.875rem;
+}
+
+.tag { font-size: 0.625rem; }
+.address { font-size: 0.9375rem; }
+.stay h2 { font-size: 2rem; }
+
+.contact h2,
+.access-section h2 {
+  font-size: 1.875rem;
+}
+
+/* Botões do card de acessibilidade */
+.access-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0 12px;
+}
+
+.access-controls button {
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid #5d7874;
+  border-radius: 12px;
+  background: white;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.access-controls button[aria-pressed="true"] {
+  background: #123f43;
+  color: white;
+  border: 3px solid #123f43;
+}
+
+.access-controls button[aria-disabled="true"] {
+  cursor: default;
+  border-style: dashed;
+}
+
+#access-status {
+  font-size: 0.875rem;
+}
+
+/* Alto contraste */
+body.high-contrast {
+  --ink: #ffffff;
+  --paper: #000000;
+  background: #000000;
+  color: #ffffff;
+}
+
+body.high-contrast header,
+body.high-contrast main,
+body.high-contrast footer,
+body.high-contrast .hero,
+body.high-contrast .card,
+body.high-contrast .stay,
+body.high-contrast .note,
+body.high-contrast .access-section,
+body.high-contrast .art {
+  background: #000000;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+body.high-contrast .hero::after,
+body.high-contrast .hero > svg,
+body.high-contrast .art::after {
+  display: none;
+}
+
+body.high-contrast p,
+body.high-contrast h1,
+body.high-contrast h2,
+body.high-contrast h3,
+body.high-contrast .small,
+body.high-contrast .source,
+body.high-contrast .tag,
+body.high-contrast .status,
+body.high-contrast .eyebrow {
+  color: #ffffff;
+}
+
+body.high-contrast a {
+  color: #ffeb3b;
+  text-decoration: underline;
+}
+
+body.high-contrast .button,
+body.high-contrast nav a,
+body.high-contrast .links a,
+body.high-contrast .filter,
+body.high-contrast .access-controls button {
+  background: #000000;
+  color: #ffeb3b;
+  border: 2px solid #ffeb3b;
+}
+
+body.high-contrast .filter[aria-pressed="true"],
+body.high-contrast .access-controls button[aria-pressed="true"] {
+  background: #ffeb3b;
+  color: #000000;
+  border: 3px solid #ffffff;
+}
+
+body.high-contrast input {
+  background: #000000;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+body.high-contrast input::placeholder {
+  color: #ffffff;
+}
+
+body.high-contrast .copy {
+  color: #ffeb3b;
+}
+
+body.high-contrast .skip {
+  background: #000000;
+  color: #ffeb3b;
+  border-color: #ffeb3b;
+}
+
+body.high-contrast a:focus-visible,
+body.high-contrast button:focus-visible,
+body.high-contrast input:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 4px;
+  box-shadow: 0 0 0 4px #000000;
+}
+
+body.high-contrast .access-link svg circle:first-child {
+  fill: #ffeb3b;
+}
+
+body.high-contrast .access-link svg circle:not(:first-child) {
+  fill: #000000;
+}
+
+body.high-contrast .access-link svg path {
+  stroke: #000000;
+}
+
+/* Adaptação dos controles para celular */
+@media (max-width: 760px) {
+  nav,
+  .filter,
+  .access-link {
+    font-size: 0.875rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(
+      2.25rem,
+      calc(7.5vw * var(--text-scale)),
+      3.4375rem
+    );
+  }
+
+  h2 { font-size: 2rem; }
+  .eyebrow { font-size: 0.6875rem; }
+
+  .access-controls {
+    flex-direction: column;
+  }
+
+  .access-controls button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .card p,
+  .stay ul {
+    font-size: 0.9375rem;
+  }
+
+  .links a,
+  .note {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand { font-size: 1rem; }
+
+  h2,
+  .stay h2,
+  .contact h2 {
+    font-size: 1.75rem;
+  }
+}
