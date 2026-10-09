@@ -255,3 +255,106 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 });
 
 render();
+
+/* Ajustes individuais de acessibilidade */
+(() => {
+  const decrease = document.getElementById("text-decrease");
+  const increase = document.getElementById("text-increase");
+  const contrast = document.getElementById("contrast-toggle");
+  const reset = document.getElementById("access-reset");
+  const status = document.getElementById("access-status");
+
+  if (!decrease || !increase || !contrast || !reset || !status) {
+    return;
+  }
+
+  const storageKey = "amarelo-sol-acessibilidade";
+  let textSize = 100;
+  let highContrast = false;
+
+  /* Recupera a escolha feita neste navegador. */
+  try {
+    const saved = JSON.parse(localStorage.getItem(storageKey));
+
+    if (saved && typeof saved === "object") {
+      if (
+        typeof saved.textSize === "number" &&
+        Number.isFinite(saved.textSize)
+      ) {
+        textSize = Math.max(
+          100,
+          Math.min(200, Math.round(saved.textSize / 10) * 10)
+        );
+      }
+
+      highContrast = saved.highContrast === true;
+    }
+  } catch {
+    // Mantém o padrão se o armazenamento estiver indisponível.
+  }
+
+  function applyPreferences(save = true) {
+    document.documentElement.style.setProperty(
+      "--text-scale",
+      String(textSize / 100)
+    );
+
+    document.body.classList.toggle(
+      "high-contrast",
+      highContrast
+    );
+
+    contrast.setAttribute(
+      "aria-pressed",
+      String(highContrast)
+    );
+
+    decrease.setAttribute(
+      "aria-disabled",
+      String(textSize === 100)
+    );
+
+    increase.setAttribute(
+      "aria-disabled",
+      String(textSize === 200)
+    );
+
+    status.textContent =
+      `Texto: ${textSize}%. Alto contraste ` +
+      (highContrast ? "ativado." : "desativado.");
+
+    if (save) {
+      try {
+        localStorage.setItem(
+          storageKey,
+          JSON.stringify({ textSize, highContrast })
+        );
+      } catch {
+        // Os controles funcionam mesmo sem salvar a preferência.
+      }
+    }
+  }
+
+  increase.addEventListener("click", () => {
+    textSize = Math.min(200, textSize + 10);
+    applyPreferences();
+  });
+
+  decrease.addEventListener("click", () => {
+    textSize = Math.max(100, textSize - 10);
+    applyPreferences();
+  });
+
+  contrast.addEventListener("click", () => {
+    highContrast = !highContrast;
+    applyPreferences();
+  });
+
+  reset.addEventListener("click", () => {
+    textSize = 100;
+    highContrast = false;
+    applyPreferences();
+  });
+
+  applyPreferences(false);
+})();
