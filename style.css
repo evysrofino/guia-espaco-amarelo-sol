@@ -1187,3 +1187,30 @@ body.high-contrast .hero .hero-content p,
 body.high-contrast .hero .hero-content .eyebrow {
   color: #fff;
 }
+/* Painel mais à esquerda e mais transparente */
+.hero {
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.hero-content {
+  max-width: 540px;
+  margin-left: 0;
+  margin-right: auto;
+  background: rgba(250, 247, 239, 0.68);
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+}
+
+body.high-contrast .hero-content {
+  background: #000;
+}
