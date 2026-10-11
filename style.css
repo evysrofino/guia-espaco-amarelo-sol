@@ -1062,3 +1062,72 @@ body.high-contrast .access-dialog .dialog-close {
     border-color: ButtonText;
   }
 }
+/* Capa com foto da Praia Grande */
+.hero {
+  background-color: #123f43;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.78),
+      rgba(0, 0, 0, 0.35)
+    ),
+    url("assets/praia-grande-amanhecer.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+/* Remove o sol e as ondas desenhados */
+.hero::after,
+.hero > svg {
+  display: none;
+}
+
+.hero h1,
+.hero p,
+.hero .eyebrow {
+  color: #fff;
+}
+
+.hero .button {
+  background: #f5bd48;
+  color: #123f43;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding: 48px 20px;
+    background-position: 47% center;
+  }
+}
+
+/* Mantém o modo de alto contraste */
+body.high-contrast .hero {
+  background-image: none;
+  background-color: #000;
+}
+
+body.high-contrast .hero .button {
+  background: #000;
+  color: #ffeb3b;
+  border: 2px solid #ffeb3b;
+}
+/* Fotos dos cartões */
+.art.art-photo {
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #d9eddf;
+}
+
+.art-photo::after {
+  display: none;
+}
+
+.art-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
