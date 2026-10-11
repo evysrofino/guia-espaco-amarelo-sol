@@ -1214,3 +1214,10 @@ body.high-contrast .hero .hero-content .eyebrow {
 body.high-contrast .hero-content {
   background: #000;
 }
+.hero-content {
+  text-align: left;
+}
+
+.hero-content h1 {
+  text-align: center;
+}
