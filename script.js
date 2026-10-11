@@ -1,4 +1,24 @@
 const places = [
+    {
+    name: "Praia da Sununga",
+    category: "Praias",
+    icon: "🏖️",
+    image: "assets/praia-sununga.jpeg",
+    imageAlt: "Praia da Sununga, com areia, mar e encosta coberta de vegetação.",
+    desc: "Conheça a paisagem da Sununga e a famosa Gruta que Chora.",
+    query: "Praia da Sununga Ubatuba SP",
+    source: "https://turismo.ubatuba.sp.gov.br/praias/praia-da-sununga/"
+  },
+  {
+    name: "Praia do Alto",
+    category: "Praias",
+    icon: "🌊",
+    image: "assets/praia-do-alto.jpeg",
+    imageAlt: "Vista do mar e da vegetação na Praia do Alto, em Ubatuba.",
+    desc: "Uma praia cercada de vegetação e costões rochosos para descobrir no seu roteiro.",
+    query: "Praia do Alto Ubatuba SP",
+    source: "https://turismo.ubatuba.sp.gov.br/praias/praia-do-alto/"
+  },
   {
     name: "Ubatuba Mall — Roda Gigante",
     category: "Passeios",
@@ -36,6 +56,8 @@ const places = [
     name: "Praia Grande",
     category: "Praias",
     icon: "🌊",
+    image: "assets/praia-grande-amanhecer.jpeg",
+    imageAlt: "Nascer do sol sobre o mar na Praia Grande, em Ubatuba.",
     desc: "Uma extensa faixa de areia para aproveitar a paisagem e escolher seu cantinho.",
     query: "Praia Grande Ubatuba SP",
     source: "https://turismo.ubatuba.sp.gov.br/praias/praia-grande/"
@@ -44,6 +66,8 @@ const places = [
     name: "Praia da Domingas Dias",
     category: "Praias",
     icon: "☀️",
+    image: "assets/praia-domingas-dias.jpeg",
+    imageAlt: "Paisagem da Praia da Domingas Dias, em Ubatuba.",
     desc: "Mais uma opção para descobrir as paisagens do litoral de Ubatuba.",
     query: "Praia Domingas Dias Ubatuba SP",
     source: "https://turismo.ubatuba.sp.gov.br/praias/praia-da-domingas-dias/"
@@ -170,10 +194,22 @@ function render() {
     }
 
     return `
-      <article class="card">
-        <div class="art" aria-hidden="true">
-          <span>${escapeHTML(place.icon)}</span>
-        </div>
+              ${place.image ? `
+          <div class="art art-photo">
+            <img
+              src="${escapeHTML(place.image)}"
+              alt="${escapeHTML(place.imageAlt || place.name)}"
+              loading="lazy"
+              decoding="async"
+              width="800"
+              height="450"
+            >
+          </div>
+        ` : `
+          <div class="art" aria-hidden="true">
+            <span>${escapeHTML(place.icon)}</span>
+          </div>
+        `}
 
         <div class="card-body">
           <span class="tag">${escapeHTML(place.category)}</span>
