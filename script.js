@@ -193,8 +193,9 @@ function render() {
       sourceLabel = "Conhecer a praia";
     }
 
-    return `
-              ${place.image ? `
+       return `
+      <article class="card">
+        ${place.image ? `
           <div class="art art-photo">
             <img
               src="${escapeHTML(place.image)}"
