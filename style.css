@@ -1162,3 +1162,28 @@ body.high-contrast .hero {
 body.high-contrast .hero-content {
   background: #000;
 }
+/* Suaviza o painel de texto da capa */
+.hero-content {
+  background: rgba(250, 247, 239, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.hero .hero-content h1,
+.hero .hero-content p,
+.hero .hero-content .eyebrow {
+  color: #123f43;
+}
+
+/* Preserva o alto contraste */
+body.high-contrast .hero-content {
+  background: #000;
+  border-color: #fff;
+  box-shadow: none;
+}
+
+body.high-contrast .hero .hero-content h1,
+body.high-contrast .hero .hero-content p,
+body.high-contrast .hero .hero-content .eyebrow {
+  color: #fff;
+}
