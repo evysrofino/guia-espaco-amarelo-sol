@@ -1131,3 +1131,34 @@ body.high-contrast .hero .button {
   object-fit: cover;
   object-position: center;
 }
+/* Nova foto: sem escurecer toda a paisagem */
+.hero {
+  background-image: url("assets/sol-praia-grande.jpeg");
+  background-position: center;
+}
+
+/* Fundo apenas atrás do texto para facilitar a leitura */
+.hero-content {
+  max-width: 610px;
+  padding: 24px;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.72);
+}
+
+@media (max-width: 760px) {
+  .hero {
+    background-position: 60% center;
+  }
+
+  .hero-content {
+    padding: 20px;
+  }
+}
+
+body.high-contrast .hero {
+  background-image: none;
+}
+
+body.high-contrast .hero-content {
+  background: #000;
+}
