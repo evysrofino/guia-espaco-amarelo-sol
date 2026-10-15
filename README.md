@@ -75,6 +75,8 @@ A arquitetura lógica, os scripts e o design inicial foram criados por meio de e
 
 ###  Ferramentas Utilizadas
 * **[ChatGPT Plus](https://chatgpt.com)** — Geração do código-fonte (HTML/CSS/JS ou Framework) e estrutura da interface.
+[![Built with ChatGPT](https://vibecoded.fyi/badges/flat/llms/chatgpt.svg)](https://vibecoded.fyi/)
+
 * **Refinamento Manual** — Ajustes e polimento final do código para garantir a usabilidade.
 
 
@@ -94,4 +96,6 @@ A arquitetura lógica, os scripts e o design inicial foram criados por meio de e
 - https://www.raizesubatuba.com/
 - https://restaurantereidocamarao.com.br/
 
-Conteúdo consultado em 9 de outubro de 2026. Fotos de terceiros não foram incluídas; os cartões usam emojis e elementos gráficos em CSS.
+## Imagens
+
+As imagens utilizadas no site são registros autênticos e originais da autora.
