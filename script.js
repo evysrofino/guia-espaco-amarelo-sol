@@ -173,7 +173,7 @@ function routes(query) {
 function render() {
   const query = normalize(search.value);
 
-  const list = places.filter(place => {
+  let list = places.filter(place => {
     const matchesCategory =
       category === "Todos" || category === place.category;
 
@@ -184,6 +184,15 @@ function render() {
     return matchesCategory && matchesSearch;
   });
 
+    // Na abertura, mostra apenas um lugar de cada categoria.
+const showingHighlights =
+  category === "Todos" && query.trim() === "";
+
+if (showingHighlights) {
+  list = ["Praias", "Passeios", "Onde comer"]
+    .map(item => places.find(place => place.category === item))
+    .filter(Boolean);
+}
   results.innerHTML = list.map(place => {
     let sourceLabel = "Informações do local";
 
@@ -238,8 +247,9 @@ function render() {
     `;
   }).join("");
 
-  count.textContent =
-    `${list.length} lugares encontrados em ${category}` +
+count.textContent = showingHighlights
+  ? "3 sugestões • escolha uma categoria para ver mais"
+  : `${list.length} lugares encontrados em ${category}` +
     (query ? " para a busca informada" : "");
 
   empty.hidden = list.length > 0;
