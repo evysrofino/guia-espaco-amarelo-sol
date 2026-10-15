@@ -1221,3 +1221,11 @@ body.high-contrast .hero-content {
 .hero-content h1 {
   text-align: center;
 }
+.stay ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.stay li {
+  margin-bottom: 12px;
+}
